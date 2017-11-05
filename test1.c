@@ -1,11 +1,11 @@
-#include<time.h>
+#include<sys/time.h>
 #include<stdio.h>
 
 int main(){
 
-time_t t;
+	struct timeval tv;
+	int a = gettimeofday(&tv, NULL);
+	printf("%d",(int)(tv.tv_sec));
 
-//printf(time(&t));
-printf("11");
 
 }
