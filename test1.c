@@ -1,11 +1,17 @@
-#include<sys/time.h>
-#include<stdio.h>
+#include <sys/time.h>
+#include <time.h>
+#include <stdio.h>
 
-int main(){
+int main(void)
+{
+    
+	struct timeval tv; 
+	struct tm *info;
+	
+	gettimeofday(&tv, NULL);	
+	info = localtime(&tv.tv_sec);	
+	printf("%s",asctime(info));
 
-	struct timeval tv;
-	int a = gettimeofday(&tv, NULL);
-	printf("%d",(int)(tv.tv_sec));
-
-
+    return 0;
 }
+
